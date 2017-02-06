@@ -21,7 +21,7 @@ Collects an input for a specific category
 @param The category input.
 @param The category weight.
 */
-int * collectCategoryInput(const std::string &, int);
+void collectCategoryInput(const std::string &, int);
 
 /*
 Calculates the weight of a category
