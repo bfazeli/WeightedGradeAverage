@@ -9,7 +9,7 @@ int main()
 	map<string, int> catAndWeightMap;
 	map<int, int> weightAndAvgMap;
 	categoryInput(catAndWeightMap, weightAndAvgMap);
-
+	collectAndDisplay(catAndWeightMap, weightAndAvgMap);
 	system("pause");
 	return 0;
 }

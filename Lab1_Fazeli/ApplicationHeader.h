@@ -18,19 +18,18 @@ void categoryInput(std::map<std::string, int> &, std::map<int, int> &);
 /*
 Collects an input for a specific category
 
-@param The category input.
-@param The category weight.
+@param A map of category and weight.
+@param A map weights and averages.
 */
-void collectCategoryInput(const std::string &, int);
+void collectAndDisplay(std::map<std::string, int> &, std::map<int, int> &);
 
 /*
 Calculates the weight of a category
 
-@param The category.
 @param The weight of the category.
-@param A pointer to the array of values for the category.
+@param The sum of values for that category.
 */
-int calculateCategoryWeight(const std::string &, int, const int *);
+int calculateCategoryAverage(int, int);
 
 /*
 Calculates the students average

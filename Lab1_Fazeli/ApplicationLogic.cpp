@@ -76,3 +76,32 @@ void categoryInput(map<string, int> & categoryWeightMap, map<int, int> & weightA
 		}
 	} while (totalLessThanLimit);
 }
+
+void collectAndDisplay(map<string, int> & categoryWeightMap, map<int, int> & weightAvgMap)
+{
+	double sum = 0, input = 0, average;
+	bool done = false;
+	map<int, int>::iterator it_W_A = weightAvgMap.begin();
+	for (map<string, int>::const_iterator it_C_W = categoryWeightMap.cbegin(); 
+		it_C_W != categoryWeightMap.cend(); ++it_C_W, ++it_W_A) 
+	{
+		cout << "\nEnter all grades for " << it_C_W->first << ".";
+		while (abs(input + 1) > .000001)
+		{
+			cout << "Enter grade or -1 to quit: ";
+			cin >> input;
+			if (input >= 0 && input < 101) sum += input;
+			else if (abs(input + 1) < .000001) break;
+			else cout << "Invalid grade. Grade must be between 0 and 100." << endl;
+		}
+
+		it_W_A->second = calculateCategoryAverage(it_C_W->second, sum);
+		cout << it_C_W->first << " average: " << it_W_A->second << endl;
+
+	}
+}
+
+int calculateCategorAverage(int weight, int sum)
+{
+
+}
